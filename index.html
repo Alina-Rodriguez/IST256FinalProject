@@ -20,12 +20,20 @@
             font-size: 10px;
         }
 
+        #logo {
+            float:right;
+        }
+
         #b1 {
             padding: 20px 40px;
             margin: 40px 50px;
             font-size: 30px;
             border-radius: 20px;
 
+        }
+
+        .lightfont{
+            color:white;
         }
 
         .l {
@@ -37,8 +45,6 @@
 
         .intro {
             background-image: url("https://images.pexels.com/photos/2768483/pexels-photo-2768483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-            /*background-image: url("https://images.pexels.com/photos/10151483/pexels-photo-10151483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");*/
-            /*background-image: url('https://images.pexels.com/photos/754261/pexels-photo-754261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');*/
         }
 
         .fonts {
@@ -46,10 +52,82 @@
 
         }
 
+        .description{
+            font-family: "Andale Mono";
+        }
+
         .blur{
             background-color: rgb(255 255 255 / 0.3);
             backdrop-filter: blur(10px);
         }
+
+        img:hover{
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 0px 30px 0px rgba(238,232,170, 0.67);
+            -moz-box-shadow:    0px 0px 30px 0px rgba(238,232,170, 0.67);
+            box-shadow:         0px 0px 30px 0px rgba(238,232,170, 0.67);
+        }
+
+
+
+
+        /* The sidebar menu */
+        .sidebar {
+            height: 100%; /* 100% Full-height */
+            width: 0; /* 0 width - change this with JavaScript */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Stay on top */
+            top: 0;
+            left: 0;
+            background-color: #111; /* Black*/
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding-top: 60px; /* Place content 60px from the top */
+            transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+        }
+
+
+        /* Position and style the close button (top right corner) */
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            left: 25px;
+            font-size: 36px;
+            margin-right: 50px;
+        }
+
+        /* The button used to open the sidebar */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+        .openbtn:hover {
+            background-color: #444;
+        }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+            transition: margin-right .5s;
+            padding: 20px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
+        }
+
+        #mission{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
     </style>
     
     
@@ -57,24 +135,51 @@
 
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
+
+    <script src="https://kit.fontawesome.com/622ccb183d.js" crossorigin="anonymous"></script>
+
+    <script>/* Set the width of the sidebar when clicked */
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "400px";
+        document.getElementById("main").style.marginLeft = "240px";
+    }
+
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }</script>
+
+
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
 
   
   <body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-xl-mode intro" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-7297"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-          <img src="logo.png">
+      <div id="main">
+          <button class="openbtn" onclick="openNav()">&#9776; Our Mission </button>
+          <img id="logo" src="blacklogo.png" height="40" width="40">
+      </div>
+
 
       </div></header>
 
-
+  <div class="container text-center">
+  <div id="mySidebar" class="sidebar lightfont">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="row fonts">
+      <h2>Our Mission</h2>
+      </div>
+      <div class="row description" id="mission">
+      <p>For our family-owned business, rings signify loyalty, dedication, love and remembrance. Our goal is to deliver rings whose strength and style reflect the integrity of the wearer's promise.</p>
+          <i class="fa-solid fa-ring"></i>
+      </div>
+      </div>
+  </div>
 
   <div class="container fonts blur">
-      <div class="row">
-          <div class="col-md-6">
+      <div class="row text-center">
         <h1>Forever Rings</h1>
-          </div>
-          <div class="col-md-6">
-        <p>For our family-owned business, rings signify loyalty, dedication, love and remembrance. Our goal is to deliver rings whose strength and style will reflect the integrity of the wearer's promise.</p>
-          </div>
+              <h3 class="description">Reflecting the integrity of the wearer's promise</h3 >
       </div>
 
       <div class="row">
@@ -86,22 +191,22 @@
       <div class="row text-center">
           <div class="col-md-4">
               <img alt="" width="300" height="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.m9IREhYYqlQta4tjedZUoQHaEK%26pid%3DApi&f=1&ipt=bee6b08d217fb91807128ae8cc86908fa2bf24ca25732185af16fbb45d1bee73&ipo=images">
-              <h3 >$ 70</h3>
-              <h6 >Sample Headline</h6>
+              <h3 >$ 195</h3>
+              <h6 >"Indefinitely" Promise Rings</h6>
               <label class="l" for="ring1">Quantity:</label>
               <input type="number" id="ring1" name="quantity" min="0" max="5">
           </div>
           <div class="col-md-4">
               <img alt="" width="300" height="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fwedding-rings-black-background-16496601.jpg&f=1&nofb=1&ipt=cddd6fba000f19fb59c37edaf3c39682e9579d60bb0454580cf5b832222d9d88&ipo=images">
-              <h3 >$ 70</h3>
-              <h6 >Sample Headline</h6>
+              <h3 >$ 170</h3>
+              <h6 >Trinity Promise Rings</h6>
               <label class="l" for="ring2">Quantity:</label>
               <input type="number" id="ring2" name="quantity" min="0" max="5">
           </div>
           <div class="col-md-4">
               <img alt="" width="300" height="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F7a%2F55%2Fe6%2F7a55e638fdd838349148d709361fe428.jpg&f=1&nofb=1&ipt=6cd26247b9a3e5d9016c50b4d5933c3609da53939e8f933e7415dad6d69d829d&ipo=images">
-              <h3 >$ 70</h3>
-              <h6 >Sample Headline</h6>
+              <h3 >$ 200</h3>
+              <h6 >Studded Wave Promise Rings</h6>
               <label class="l" for="ring3">Quantity:</label>
               <input type="number" id="ring3" name="quantity" min="0" max="5">
           </div>
@@ -116,22 +221,22 @@
       <div class="row text-center">
           <div class="col-md-4">
               <img alt="" width="300" height="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2016%2F01%2F281825-The_Lord_of_the_Rings-rings-reflection-black_background-depth_of_field-The_One_Ring.jpg&f=1&nofb=1&ipt=f221db3e2aea03fe9400a307dd2109350a785468259017402faec62f88187c9c&ipo=images">
-              <h3 >$ 70</h3>
-              <h6 >Sample Headline</h6>
+              <h3 >$ 100</h3>
+              <h6 >Inscribed Single Ring</h6>
               <label class="l" for="ring4">Quantity:</label>
               <input type="number" id="ring4" name="quantity" min="0" max="5">
           </div>
           <div class="col-md-4">
               <img alt="" width="300" height="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fak6.picdn.net%2Fshutterstock%2Fvideos%2F43276%2Fthumb%2F6.jpg&f=1&nofb=1&ipt=25c033177143ae33bfa54e1f86f009b135f6f15d397f36809d79be94d19409e6&ipo=images">
-              <h3 >$ 70</h3>
-              <h6 >Sample Headline</h6>
+              <h3 >$ 200</h3>
+              <h6 >"Golden Couple" Promise Rings</h6>
               <label class="l" for="ring5">Quantity:</label>
               <input type="number" id="ring5" name="quantity" min="0" max="5">
           </div>
           <div class="col-md-4">
               <img alt="" width="300" height="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fwedding-gold-wedding-rings-diamonds-black-background-clipart-white-78499517.jpg&f=1&nofb=1&ipt=efa2b62824b61fe5a012f210b0d5b6fc0bbba88a1bcd0a11ddb652476197b727&ipo=images">
-              <h3 >$ 70</h3>
-              <h6 >Sample Headline</h6>
+              <h3 >$ 190</h3>
+              <h6 >"Simple Crystal" Promise Rings</h6>
               <label class="l" for="ring6">Quantity:</label>
               <input type="number" id="ring6" name="quantity" min="0" max="5">
           </div>
@@ -147,22 +252,22 @@
       <div class="row text-center">
           <div class="col-md-4">
               <img alt="" width="300" height="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ff9%2F4c%2Fbf%2Ff94cbf093ad76192ea49aa6101c40538.jpg&f=1&nofb=1&ipt=2fecdbd552ae0dcc6e35d1974aa579d1279dfbf08a156e26c839b8dc461e453d&ipo=images">
-              <h3 >$ 70</h3>
-              <h6 >Sample Headline</h6>
+              <h3 >$ 400</h3>
+              <h6 >"What a Gem" Promise Rings</h6>
               <label class="l" for="ring7">Quantity:</label>
               <input type="number" id="ring7" name="quantity" min="0" max="5">
           </div>
           <div class="col-md-4">
               <img alt="" width="300" height="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Farchziner.com%2Fwp-content%2Fuploads%2F2019%2F03%2Flarge-square-diamond-alternative-engagement-rings-black-background-diamond-studded-band.jpeg&f=1&nofb=1&ipt=5fd51e7b0e69797fa9efeb252aad4bf84e449ffe504de5991207dbe5a12eaa5c&ipo=images">
-              <h3 >$ 70</h3>
-              <h6 >Sample Headline</h6>
+              <h3 >$ 220</h3>
+              <h6 >"The Queen" Single Ring</h6>
               <label class="l" for="ring8">Quantity:</label>
               <input type="number" id="ring8" name="quantity" min="0" max="5">
           </div>
           <div class="col-md-4">
               <img alt="" width="300" height="200" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcooldigital.photography%2Fwp-content%2Fuploads%2F2018%2F11%2Fjewelry-ring-with-big-square-diamond-on-black-background-with-reflection.jpg&f=1&nofb=1&ipt=0e1b65f539364e3a1d1617bfa51d733809f745071b4c9d80592b9c189950f589&ipo=images">
-              <h3 >$ 70</h3>
-              <h6 >Sample Headline</h6>
+              <h3 >$ 190</h3>
+              <h6 >"White as Snow" Purity Ring</h6>
               <label class="l" for="ring9">Quantity:</label>
               <input type="number" id="ring9" name="quantity" min="0" max="5">
           </div>
@@ -182,13 +287,19 @@
       </div>
       </form>
 
+
   </div>
   </div>
 
+
+
     
     <footer class="fonts u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-6384"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Contact at: foreverrings@gmail.com or 123-456-7899<br>ForeverRings All Rights Reserved
-        </p>
+        <p class="u-small-text u-text u-text-variant u-text-1">Contact at: foreverrings@gmail.com or 123-456-7899
+            <br>
+            <i class="fa-solid fa-ring"></i>
+            <br>ForeverRings All Rights Reserved</p>
+
       </div></footer>
 
   
